@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<indexs>
+	<index name="news" save_dir="e:/test/index/news/" is_mem="false" analyser="single"></index>
+	<index name="pg" save_dir="e:/test/index/pg/" is_mem="false" analyser="single"></index>
+	<index name="channel" save_dir="e:/test/index/channel" is_mem="false" analyser="single"></index>
+	<index name="fragment" save_dir="e:/test/index/fragment" is_mem="false" analyser="single"></index>
+	<index name="all" refs="news,pg,channel,fragment"></index>
+</indexs>
+
+<databases>
+	<database url="">
+		<table name="web_news" index_ref="news">
+			<column name="nid" index_field="id" index="NOT_ANALYZED" store="YES"></column>
+			<column name="title" index_field="title" index="ANALYZED" store="YES"></column>
+			<column name="channel_id" index_field="channel" index="NOT_ANALYZED"
+				store="YES"></column>
+			<column name="creat_time" index_field="creat_time" index="NOT_ANALYZED"
+				store="YES"></column>
+		</table>
+
+		<table name="web_picturegroup" index_ref="pg">
+			<column name="gid" index_field="id" index="NOT_ANALYZED" store="YES"></column>
+			<column name="title" index_field="title" index="ANALYZED" store="YES"></column>
+			<column name="channel_id" index_field="channel" index="NOT_ANALYZED"
+				store="YES"></column>
+			<column name="creat_time" index_field="creat_time" index="NOT_ANALYZED"
+				store="YES"></column>
+		</table>
+
+
+	</database>
+
+</databases>	
