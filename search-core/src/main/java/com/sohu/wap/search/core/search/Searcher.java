@@ -20,7 +20,6 @@ import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.store.RAMDirectory;
 import org.apache.lucene.util.Version;
 
-import com.sohu.wap.search.core.index.IndexConfig;
 
 /**
  * @ClassName: Searcher
@@ -43,8 +42,8 @@ public class Searcher {
 	
 	private Searcher(){
 		
-		String fdir=IndexConfig.getProperty(IndexConfig.DIR);
-		boolean useMem=Boolean.valueOf(IndexConfig.getProperty(IndexConfig.SEARCH_USEMEM));
+		String fdir="";
+		boolean useMem=false;
 		try{
 			dir=FSDirectory.open(new File(fdir));
 			if(useMem){

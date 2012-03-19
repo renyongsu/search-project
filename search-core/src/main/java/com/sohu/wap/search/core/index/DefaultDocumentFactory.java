@@ -4,24 +4,30 @@ import java.util.List;
 
 import org.apache.lucene.document.Document;
 
-public class DefaultDocumentFactory implements DocumentFactory{
+import com.sohu.wap.search.core.xml.DomIndex;
+import com.sohu.wap.search.core.xml.DomParser;
+import com.sohu.wap.search.core.xml.DomTable;
 
-	@Override
-	public void init() {
+public class DefaultDocumentFactory{
+	
+	DomParser domParser=new DomParser();
+	DefaultDao dao=new DefaultDao();
+
+	
+	public List<Document> getDocuments(DomTable domTable,int start,int size)throws Exception {
 		// TODO Auto-generated method stub
 		
+		return dao.getDocuments(domTable, start, size);
+	
 	}
-
-	@Override
-	public List<Document> getDocuments() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public  List<DomTable> getTables(DomIndex domIndex){
+		return domParser.getTablesByIndex(domIndex.getName());
 	}
-
-	@Override
-	public void close() {
-		// TODO Auto-generated method stub
-		
+	
+	
+	public List<DomIndex> getDomIndexs(){
+		return domParser.getIndexs();
 	}
 
 }
