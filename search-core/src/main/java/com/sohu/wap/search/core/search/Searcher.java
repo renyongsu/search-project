@@ -57,9 +57,13 @@ public class Searcher {
 		
 	}
 	
-	public static synchronized Searcher getInstance(){
+	public static  Searcher getInstance(){
 		if(instance==null){
-			instance=new Searcher();
+			synchronized (Searcher.class) {
+				if(instance==null){
+					instance=new Searcher();
+				}	
+			}
 		}
 		return instance;
 	}
