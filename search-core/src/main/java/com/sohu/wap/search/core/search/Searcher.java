@@ -30,15 +30,13 @@ import org.apache.lucene.util.Version;
  */
 public class Searcher {
 	
-	private static Searcher instance=null;
+	private static Searcher instance=new Searcher();
 	
 	private Directory dir=null;
 	
 	private IndexSearcher searcher=null;
 	
 	private Logger logger=Logger.getLogger(Searcher.class);
-	
-	
 	
 	private Searcher(){
 		
@@ -58,13 +56,7 @@ public class Searcher {
 	}
 	
 	public static  Searcher getInstance(){
-		if(instance==null){
-			synchronized (Searcher.class) {
-				if(instance==null){
-					instance=new Searcher();
-				}	
-			}
-		}
+		
 		return instance;
 	}
 	
