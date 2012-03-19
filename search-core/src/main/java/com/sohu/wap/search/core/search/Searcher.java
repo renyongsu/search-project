@@ -50,6 +50,7 @@ public class Searcher {
 			if(useMem){
 				dir=new RAMDirectory(dir);
 			}
+			
 			searcher=new IndexSearcher(dir);
 		}catch(Exception e){
 			logger.error("error:",e);
