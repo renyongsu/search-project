@@ -8,6 +8,7 @@
   <name>search-project</name>
   <modules>
     <module>search-core</module>
+    <module>search-web</module>
   </modules>
   
   <dependencies>
