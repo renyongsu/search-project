@@ -31,4 +31,61 @@
     </dependency>
   </dependencies>
   
+  <repositories>
+		<repository>
+			<id>localcentral</id>
+			<url>http://192.168.106.94:8081/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>wcms</id>
+			<url>http://192.168.106.94:8081/nexus/content/repositories/wcms</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>wcms-snapshots</id>
+			<url>http://192.168.106.94:8081/nexus/content/repositories/wcms-snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+				<updatePolicy>always</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>CMS5Snapshots</id>
+			<url>http://192.168.106.94:8081/nexus/content/repositories/cms5-snapshots/</url>
+			<releases>
+				<enabled>false</enabled>
+				<updatePolicy>always</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>localcentral</id>
+			<url>http://192.168.106.94:8081/nexus/content/groups/public</url>
+		</pluginRepository>
+	</pluginRepositories>
+  
 </project>
